@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #3E4449">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,25 +9,22 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <title>Kim er best</title>
     </head>
-    <body style="padding: 1.5%">
-    <form style="width: 50%; margin: auto; padding: 5%;" class="text-center">
+    <body style="padding: 1.5%; background-color: #3E4449; color: white;">
+    <form style="width: 50%; margin: auto; padding: 0%;" class="text-center">
         <div class="row">
             <div class="col">
-                <label>Name</label>
-                    <input style="text-align: center;" type="text" class="form-control" placeholder="Name">
+                    <input id="name" style="text-align: center;" type="text" class="form-control" placeholder="Name">
             </div>
 
         <div class="col">
-            <label>Nick</label>
-            <input style="text-align: center;" type="text" class="form-control" placeholder="Nick">
+            <input id="nick" style="text-align: center;" type="text" class="form-control" placeholder="Nick">
         </div>
 
         <div class="col">
-            <label>Handle</label>
-            <input style="text-align: center;" type="text" class="form-control" placeholder="Github handle">
+            <input id="handle" style="text-align: center;" type="text" class="form-control" placeholder="Github handle">
         </div>
         </div>
-        <button style="margin: 3%;" id="btn" onclick="onClick()" class="btn btn-outline-dark">Enter</button>
+        <button style="margin: 3%;" id="btn" onclick="onClick()" class="btn btn-outline-light">Enter</button>
 
     </form>
     <table class="table table-dark table-striped">
@@ -67,7 +64,20 @@
 
 <script>
     function onClick() {
-    alert("Du tror virkelig jeg har fikset dette?");
+        getValues();
+        alert("Du tror virkelig jeg har fikset dette?");
+    }
+
+    function getValues(){
+            var getName = document.getElementById("name").value;
+                console.log(getName);
+
+            var getNick = document.getElementById("nick").value;
+                console.log(getNick);
+
+            var getHandle = document.getElementById("handle").value;
+                console.log(getHandle);
+
     }
 </script>
 
