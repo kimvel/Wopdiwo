@@ -24,7 +24,7 @@
             <input id="handle" style="text-align: center;" type="text" class="form-control" placeholder="Github">
         </div>
         </div>
-        <button style="margin: 3%;" id="btn" onclick="onClick()" class="btn btn-outline-light">Enter</button>
+        <button style="margin: 3%;" id="btn" onclick="onClick()" class="btn btn-outline-light" type="reset">Enter</button>
 
     </form>
     <table id="table" class="table table-dark table-striped">
@@ -65,7 +65,6 @@
 <script>
     function onClick() {
         getValues();
-        alert("Du tror virkelig jeg har fikset dette?");
     }
 
     function getValues(){
@@ -73,7 +72,11 @@
             var getNick = document.getElementById("nick").value;
             var getHandle = document.getElementById("handle").value;
 
-            addNewTable(getName, getNick, getHandle);
+            if (getName.length != 0 && getNick.length != 0){
+                addNewTable(getName, getNick, getHandle);
+            } else {
+                alert("You cannot add nothing to the table!");
+            }
     }
 
     function addNewTable(getName, getNick, getHandle){
@@ -87,7 +90,6 @@
         var newNick = newRow.insertCell(2);
         var newHandle = newRow.insertCell(3);
 
-    
         numIncr.innerHTML = tableRow;
         newName.innerHTML = getName;
         newNick.innerHTML = getNick;
